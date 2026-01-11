@@ -6,7 +6,343 @@
     <title>حلول ومراجعة المالية - REV1-23</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراجعة المالية النهائية - REV1-23</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* التنسيقات الكاملة (Phase 3) */
+        body { font-family: 'Cairo', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; line-height: 1.6; }
+        header { background-color: #2c3e50; color: #fff; text-align: center; padding: 20px 0; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 5px 0 0; font-size: 1.2rem; opacity: 0.8; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .page-section { background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 40px; overflow: hidden; border: 1px solid #e1e4e8; }
+        .image-wrapper { background-color: #ecf0f1; text-align: center; padding: 20px; border-bottom: 1px solid #eee; }
+        .image-wrapper img { max-width: 100%; height: auto; border: 1px solid #ccc; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .qa-block { padding: 20px; border-bottom: 1px solid #f0f0f0; }
+        .qa-block:last-child { border-bottom: none; }
+        .question { background-color: #e8f4f8; color: #2980b9; font-weight: 700; font-size: 1.1rem; padding: 10px 15px; border-right: 5px solid #3498db; border-radius: 4px; margin-bottom: 15px; }
+        .answer { padding: 10px 15px; font-size: 1rem; color: #444; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; text-align: right; border: 1px solid #ddd; }
+        th { background-color: #f8f9fa; font-weight: bold; }
+        .chapter { margin-top: 15px; padding-top: 10px; border-top: 1px dashed #ccc; font-size: 0.9rem; color: #7f8c8d; font-style: italic; display: inline-block; background-color: #fafafa; padding: 5px 10px; border-radius: 4px; }
+        ul { margin-right: 20px; padding: 0; }
+        strong { color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مراجعة وحلول الأسئلة المالية</h1>
+        <p>جميع الصفحات (REV1-23)</p>
+    </header>
+
+    <div class="container">
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_1.jpg" alt="page_1"></div>
+            <div class="qa-block">
+                <div class="question">السؤال الأول: اذكر أربع اختلافات بين الأسهم والسندات؟</div>
+                <div class="answer">
+                    <table border="1">
+                        <tr><th>وجه المقارنة</th><th>السندات (الديون)</th><th>الأسهم (الملكية)</th></tr>
+                        <tr><td>طبيعة الأداة</td><td>تعتبر دينًا على الشركة، وحاملها دائن.</td><td>تمثل حصة ملكية في الشركة، وحاملها مالك.</td></tr>
+                        <tr><td>حق التصويت</td><td>لا يملك حملة السندات حق التصويت في الإدارة.</td><td>يملك حملة الأسهم العادية حق التصويت.</td></tr>
+                        <tr><td>تاريخ الاستحقاق</td><td>لها تاريخ استحقاق محدد يجب فيه سداد أصل الدين.</td><td>ليس لها تاريخ استحقاق (دائمة).</td></tr>
+                        <tr><td>الأولوية في السداد</td><td>لهم الأولوية في المطالبة بالدخل والأصول عند الإفلاس.</td><td>يأتون في المرتبة الأخيرة (حق متبقي) بعد الدائنين.</td></tr>
+                        <tr><td>العائد والضريبة</td><td>الفائدة تعتبر نفقة وتخصم من الضرائب.</td><td>توزيعات الأرباح لا تخفض الدخل الخاضع للضريبة.</td></tr>
+                    </table>
+                </div>
+                <div class="chapter">الشابتر: الفصل 7 و الفصل 6.</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">السؤال الثاني: حساب صافي القيمة الحالية (NPV) وفترة الاسترداد</div>
+                <div class="answer">
+                    <strong>أ- حساب NPV عند معدل خصم 9%:</strong><br>
+                    <em>المشروع (أ):</em><br>
+                    $$NPV_A = \frac{40,000}{(1.09)^1} + \frac{40,000}{(1.09)^2} + \frac{40,000}{(1.09)^3} - 80,000 = 21,251 \$$$<br>
+                    <em>المشروع (ب):</em><br>
+                    $$NPV_B = \frac{35,000}{(1.09)^1} + \frac{35,000}{(1.09)^2} + \frac{90,000}{(1.09)^3} - 120,000 = 11,066 \$$$<br>
+                    <strong>القرار:</strong> نختار المشروع (أ) لأنه الأعلى.<br><br>
+                    <strong>ب- حساب فترة الاسترداد:</strong><br>
+                    <em>المشروع (أ):</em> يسترد في 2 سنة بالظبط.<br>
+                    <em>المشروع (ب):</em> يسترد في 2.56 سنة.<br>
+                    <strong>القرار:</strong> نختار المشروع (أ) لأنه ضمن الحد الأقصى (سنتين).
+                </div>
+                <div class="chapter">الشابتر: الفصل 8.</div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_2.jpg" alt="page_2"></div>
+            <div class="qa-block">
+                <div class="question">القسم الأول: صح أم خطأ وتصحيح الأخطاء</div>
+                <div class="answer">
+                    <ul>
+                        <li><strong>السند بخصم:</strong> (صح).</li>
+                        <li><strong>الأسهم أقل مخاطر:</strong> (خطأ). الأسهم أعلى مخاطر.</li>
+                        <li><strong>معدل العائد الداخلي:</strong> (صح).</li>
+                        <li><strong>الانحراف المعياري للعائد المتوقع:</strong> (خطأ). الانحراف للمخاطر الكلية، وبيتا للمخاطر النظامية.</li>
+                        <li><strong>التحفظ هو طلب عائد منخفض:</strong> (خطأ). هو طلب عائد مرتفع عند زيادة المخاطر.</li>
+                        <li><strong>القابلية للاستدعاء تحويل لأسهم:</strong> (خطأ). دي القابلية للتحويل.</li>
+                        <li><strong>معدل الكوبون هو المبلغ المقترض:</strong> (خطأ). المبلغ هو القيمة الاسمية.</li>
+                        <li><strong>معامل الارتباط للمخاطر غير القابلة للتنويع:</strong> (خطأ). ده تعريف بيتا.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_3.jpg" alt="page_3"></div>
+            <div class="qa-block">
+                <div class="question">1) حساب السعر الحالي للسهم (النمو المستمر)</div>
+                <div class="answer">
+                    $$D_1 = 15 \times (1.08) = 16.2$$
+                    $$P_0 = \frac{16.2}{0.10 - 0.08} = \frac{16.2}{0.02} = \mathbf{810\$}$$
+                </div>
+            </div>
+            <div class="qa-block">
+                <div class="question">2) حساب سعر السهم بعد 5 سنوات</div>
+                <div class="answer">
+                    $$P_0 = \frac{21}{0.02} = 1,050 \$$$
+                    $$P_5 = 1,050 \times (1.05)^5 \approx \mathbf{1,340.1\$}$$
+                </div>
+            </div>
+            <div class="qa-block">
+                <div class="question">3) القيمة الحالية للتدفقات النقدية المختلطة</div>
+                <div class="answer">
+                    $$PV_{Total} = 34,651 - 4,483.8 + 25,183.4 = \mathbf{55,350.6\$}$$
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_4.jpg" alt="page_4"></div>
+            <div class="qa-block">
+                <div class="question">4) حساب العائد المتوقع على المحفظة</div>
+                <div class="answer">
+                    $$E(r_p) = (0.40 \times 10\%) + (0.30 \times 8\%) + (0.30 \times 16\%) = \mathbf{11.2\%}$$
+                </div>
+            </div>
+            <div class="qa-block">
+                <div class="question">5) حساب سعر السند (بعد 3 سنوات)</div>
+                <div class="answer">
+                    $$PV_{coupons} \approx 468.58$$
+                    $$PV_{par} \approx 583.50$$
+                    $$Price = \mathbf{1,052.08\$}$$
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_5.jpg" alt="page_5"></div>
+            <div class="qa-block">
+                <div class="question">7) حساب معدل العائد الخالي من المخاطر</div>
+                <div class="answer">$$R_F = 14.2\% - 4.1\% = \mathbf{10.1\%}$$</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">8) حساب العائد باستخدام CAPM</div>
+                <div class="answer">$$r = 6\% + 0.5 \times (21\% - 6\%) = \mathbf{13.5\%}$$</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">9) فترة الاسترداد للمشروعين</div>
+                <div class="answer">المشروع (س): 2.41 سنة. المشروع (ص): 3.07 سنة. <strong>نختار (س)</strong>.</div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_6.jpg" alt="page_6"></div>
+            <div class="qa-block">
+                <div class="question">6) اذكر 4 اختلافات بين السندات والأسهم العادية؟</div>
+                <div class="answer">طبيعة الأداة (دين/ملكية)، الأولوية في السداد، العائد (ثابت/متغير)، تاريخ الاستحقاق.</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">7) مزايا وعيوب فترة الاسترداد؟</div>
+                <div class="answer"><strong>مزايا:</strong> سهولة، مؤشر سيولة. <strong>عيوب:</strong> تجاهل القيمة الزمنية، تجاهل ما بعد الفترة.</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">8) المخاطر الغير قابلة للتنويع؟</div>
+                <div class="answer">مخاطر السوق العامة (تضخم، حروب) التي تصيب الجميع ولا يمكن التخلص منها بالتنويع (تقاس بـ بيتا).</div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_8.jpg" alt="page_8"></div>
+            <div class="qa-block"><div class="question">1- اختلافات السندات والأسهم</div><div class="answer">تم ذكرها بالتفصيل (طبيعة الأداة، التصويت، الاستحقاق، الأولوية).</div></div>
+            <div class="qa-block"><div class="question">2- مزايا وعيوب فترة الاسترداد</div><div class="answer">تم ذكرها بالتفصيل.</div></div>
+            <div class="qa-block"><div class="question">3- المخاطر غير القابلة للتنويع</div><div class="answer">هي المخاطر النظامية (Systematic Risk).</div></div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_9.jpg" alt="page_9"></div>
+            <div class="qa-block"><div class="question">1- سعر السهم (جوردون)</div><div class="answer">$$P_0 = \frac{16.2}{0.02} = \mathbf{810\$}$$</div></div>
+            <div class="qa-block"><div class="question">2- سعر السهم بعد 5 سنوات</div><div class="answer">$$P_5 = 1,050 \times (1.05)^5 \approx \mathbf{1,340.1\$}$$</div></div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_10.jpg" alt="page_10"></div>
+            <div class="qa-block">
+                <div class="question">3- التدفقات النقدية المختلطة (تفصيل)</div>
+                <div class="answer">
+                    PV1 (سنوات 1-4) = 34,651$<br>
+                    PV2 (سنة 5) = -4,483.6$<br>
+                    PV3 (سنوات 6-10) = 25,182.5$<br>
+                    <strong>الإجمالي = 55,350$</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_11.jpg" alt="page_11"></div>
+            <div class="qa-block">
+                <div class="question">4- عائد المحفظة (الوزن الناقص)</div>
+                <div class="answer">وزن ص = 0.25. الإجمالي: $$E(r_p) = \mathbf{11\%}$$</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">5- سعر السند (نصف سنوي)</div>
+                <div class="answer">
+                    نستخدم n=10, r=6%, PMT=50.<br>
+                    الكوبونات: 368$ + الاسمي: 558.4$ = <strong>926.4$</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_12.jpg" alt="page_12"></div>
+            <div class="qa-block"><div class="question">7- العائد الخالي من المخاطر</div><div class="answer">14.2 - 4.1 = <strong>10.1%</strong></div></div>
+            <div class="qa-block"><div class="question">8- CAPM</div><div class="answer">6% + 0.5(15%) = <strong>13.5%</strong></div></div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_13.jpg" alt="page_13"></div>
+            <div class="qa-block">
+                <div class="question">9- المفاضلة (فترة الاسترداد)</div>
+                <div class="answer">
+                    س: 2.41 سنة.<br>
+                    ص: 3.07 سنة.<br>
+                    <strong>القرار: المشروع س.</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_14.jpg" alt="page_14"></div>
+            <div class="qa-block">
+                <div class="question">1- التدفقات النقدية المختلطة</div>
+                <div class="answer">
+                    PV1 = 1,901.9$<br>
+                    PV2 = -310.5$<br>
+                    PV3 = 2,118.3$<br>
+                    <strong>الإجمالي = 3,709.7$</strong>
+                </div>
+            </div>
+            <div class="qa-block">
+                <div class="question">2- تقييم السندات (الاسمية والسوق)</div>
+                <div class="answer">
+                    أ) الفائدة الاسمية: $$4.13 + 2.67 + 2.66 = \mathbf{9.46\%}$$<br>
+                    ب) السعر (نصف سنوي): الكوبونات (1,100.9) + الاسمي (189.5) = <strong>1,290.4$</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_15.jpg" alt="page_15"></div>
+            <div class="qa-block">
+                <div class="question">4, 5, 6, 7 - أسئلة اختيارية (MCQ)</div>
+                <div class="answer">
+                    4. ترشيد رأس المال: (ب) مبالغ محدودة.<br>
+                    5. مقياس المخاطر النظامية: (ج) بيتا.<br>
+                    6. تقبل المخاطر: (أ) اختيار مخاطر مرتفعة.<br>
+                    7. التنويع: (ج) يقلل الكلية، يزيل غير النظامية.
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_16.jpg" alt="page_16"></div>
+            <div class="qa-block">
+                <div class="question">صح أم خطأ (مراجعة)</div>
+                <div class="answer">
+                    علاقة عكسية بين القيمة الحالية والفائدة (صح).<br>
+                    IRR لازم يكون أكبر من تكلفة رأس المال (الخطأ كان بيقول أقل).<br>
+                    الأسهم الممتازة تشبه السندات في ثبات الربح.
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_17.jpg" alt="page_17"></div>
+            <div class="qa-block">
+                <div class="question">1- بيتا المحفظة</div>
+                <div class="answer">$$ \beta_p = (0.3 \times 2) + (0.4 \times 1.5) + (0.3 \times 1.25) = \mathbf{1.575} $$</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">2- تدفقات مختلطة (خصم 8%)</div>
+                <div class="answer">$$ Total PV = 1,656.05 - 272.23 + 2,517.01 = \mathbf{3,900.83\$} $$</div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_18.jpg" alt="page_18"></div>
+            <div class="qa-block">
+                <div class="question">5- سعر السند (علاوة)</div>
+                <div class="answer">$$Price = 588.81 + 558.39 = \mathbf{1,147.2\$}$$</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">7- المفاضلة (NPV)</div>
+                <div class="answer">
+                    NPV س = -18,275 (مرفوض).<br>
+                    NPV ص = +27,734 (مقبول).<br>
+                    <strong>نختار ص.</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_19.jpg" alt="page_19"></div>
+            <div class="qa-block">
+                <div class="question">3- عائد المحفظة</div>
+                <div class="answer">$$E(r) = (0.4 \times 10) + (0.6 \times 20) = \mathbf{16\%}$$</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">8- فترة استرداد (ص)</div>
+                <div class="answer">3 سنوات وجزء (0.33) = <strong>3.33 سنة</strong>.</div>
+            </div>
+            <div class="qa-block">
+                <div class="question">4- حساب بيتا (CAPM عكسي)</div>
+                <div class="answer">$$12 = 3 + 8\beta \rightarrow \beta = 9/8 = \mathbf{1.125}$$</div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="image-wrapper"><img src="REV1-23/page_20.jpg" alt="page_20"></div>
+            <div class="qa-block">
+                <div class="question">ب) عائد متوقع & مقالي</div>
+                <div class="answer">
+                    عائد سهم ص = 15%.<br>
+                    مخاطر دولية: عملة وسياسية.<br>
+                    مشاريع متمانعة: اللي بتتنافس وقبول واحد يلغي التاني.
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" style="text-align:center; padding: 20px; border: 2px dashed #ccc;">
+            <h3>ملاحظة: الصفحات 21, 22, 23</h3>
+            <p>هي صور مكررة للصفحات السابقة (16, 17, 18) وتم حلها بالفعل.</p>
+        </section>
+
+    </div>
+</body>
+</html>
     
     <style>
         /* التنسيقات (CSS) */
