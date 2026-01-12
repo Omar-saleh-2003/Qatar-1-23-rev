@@ -3,726 +3,913 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المراجعة النهائية للمالية - REV1-23</title>
+    <title>حلول أسئلة المراجعة - REV1-23</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #f9f9f9; color: #333; margin: 0; padding: 20px; line-height: 1.8; }
-        header { background-color: #2c3e50; color: #fff; text-align: center; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
-        .page-container { background: #fff; padding: 20px; margin-bottom: 40px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .img-box { text-align: center; margin-bottom: 20px; background: #eee; padding: 10px; border-radius: 4px; }
-        .img-box img { max-width: 100%; height: auto; border: 1px solid #ccc; }
-        .qa-box { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .question { background-color: #e3f2fd; color: #0d47a1; padding: 10px; border-right: 4px solid #2196f3; font-weight: bold; margin-bottom: 10px; border-radius: 4px; }
-        .answer { padding: 10px; background-color: #fff; }
-        .chapter { font-size: 0.9em; color: #777; margin-top: 5px; font-style: italic; background: #f1f1f1; display: inline-block; padding: 2px 8px; border-radius: 4px; }
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: right; }
-        th { background-color: #f0f0f0; }
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --question-bg: #e8f6f3;
+            --answer-bg: #ffffff;
+            --chapter-color: #e74c3c;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        .page-section {
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+            padding: 20px;
+            border-top: 5px solid var(--accent-color);
+        }
+        .page-header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .page-header h2 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        .page-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .qa-block {
+            margin-bottom: 30px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 20px;
+        }
+        .qa-block:last-child {
+            border-bottom: none;
+        }
+        .question {
+            background-color: var(--question-bg);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #16a085;
+            position: relative;
+        }
+        .question::before {
+            content: "س: ";
+            color: #1abc9c;
+        }
+        .answer {
+            background-color: var(--answer-bg);
+            padding: 10px 15px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .chapter {
+            font-size: 0.9rem;
+            color: var(--chapter-color);
+            font-weight: 600;
+            text-align: left;
+            padding: 5px 10px;
+            background: #fce4ec;
+            display: inline-block;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .math-block {
+            overflow-x: auto;
+            padding: 10px 0;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>المراجعة النهائية للمالية (REV1-23)</h1>
-    <p>جميع الأسئلة والحلول بالنص الكامل</p>
-</header>
+<div class="container">
+    <h1>حلول أسئلة المراجعة والامتحانات</h1>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_1.jpg" alt="page_1"></div>
-    
-    <div class="qa-box">
-        <div class="question">السؤال الأول: اذكر أربع اختلافات بين الأسهم والسندات؟</div>
-        <div class="answer">
-            <table>
-                <tr><th>وجه المقارنة</th><th>السندات (الديون)</th><th>الأسهم (الملكية)</th></tr>
-                <tr><td>طبيعة الأداة</td><td>تعتبر دينًا على الشركة، وحاملها دائن.</td><td>تمثل حصة ملكية في الشركة، وحاملها مالك.</td></tr>
-                <tr><td>حق التصويت</td><td>لا يملك حملة السندات حق التصويت في الإدارة.</td><td>يملك حملة الأسهم العادية حق التصويت (انتخاب مجلس الإدارة).</td></tr>
-                <tr><td>تاريخ الاستحقاق</td><td>لها تاريخ استحقاق محدد يجب فيه سداد أصل الدين.</td><td>ليس لها تاريخ استحقاق (دائمة).</td></tr>
-                <tr><td>الأولوية في السداد</td><td>لهم الأولوية في المطالبة بالدخل والأصول عند الإفلاس.</td><td>يأتون في المرتبة الأخيرة (حق متبقي) بعد الدائنين.</td></tr>
-                <tr><td>العائد والضريبة</td><td>الفائدة تعتبر نفقة وتخصم من الضرائب.</td><td>توزيعات الأرباح لا تخفض الدخل الخاضع للضريبة.</td></tr>
-            </table>
+    <section class="page-section" id="page1">
+        <div class="page-header">
+            <h2>الصفحة 1 (Page_1)</h2>
         </div>
-        <div class="chapter">ينتمي هذا السؤال إلى الفصل 7 (Chapter 7) بشكل رئيسي، وجزء منه في الفصل 6.</div>
-    </div>
+        <img src="REV1-23/page_1.jpg" alt="page_1" class="page-image">
 
-    <div class="qa-box">
-        <div class="question">السؤال الثاني: حساب صافي القيمة الحالية (NPV) وفترة الاسترداد</div>
-        <div class="answer">
-            <strong>المعطيات:</strong><br>
-            المشروع (أ): تكلفة أولية (80,000)، تدفقات سنوية: 40,000 لمدة 3 سنوات.<br>
-            المشروع (ب): تكلفة أولية (120,000)، تدفقات: السنة 1 (35,000)، السنة 2 (35,000)، السنة 3 (90,000).<br><br>
-            
-            <strong>أ- حساب صافي القيمة الحالية (NPV) عند معدل خصم 9%:</strong><br>
-            قانون الاحتساب: $$NPV = \sum \frac{CF_t}{(1+r)^t} - Initial Investment$$
-            <br>
-            <strong>المشروع (أ):</strong><br>
-            $$NPV_A = \frac{40,000}{(1.09)^1} + \frac{40,000}{(1.09)^2} + \frac{40,000}{(1.09)^3} - 80,000$$
-            $$NPV_A = 36,697 + 33,667 + 30,887 - 80,000$$
-            $$NPV_A = 21,251 \text{ دولار تقريبًا.}$$
-            <br>
-            <strong>المشروع (ب):</strong><br>
-            $$NPV_B = \frac{35,000}{(1.09)^1} + \frac{35,000}{(1.09)^2} + \frac{90,000}{(1.09)^3} - 120,000$$
-            $$NPV_B = 32,110 + 29,459 + 69,497 - 120,000$$
-            $$NPV_B = 11,066 \text{ دولار تقريبًا.}$$
-            <br>
-            <strong>القرار:</strong> المشروع الذي يجب اختياره هو المشروع (أ) لأنه يحقق صافي قيمة حالية أعلى.<br><br>
-            
-            <strong>ب- حساب فترة الاسترداد (الحد الأقصى سنتين):</strong><br>
-            <strong>المشروع (أ):</strong><br>
-            السنة 0: -80,000<br>
-            السنة 1: استرداد 40,000 (المتبقي 40,000).<br>
-            السنة 2: استرداد 40,000 (المتبقي 0).<br>
-            فترة الاسترداد = 2 سنة.<br><br>
-            
-            <strong>المشروع (ب):</strong><br>
-            السنة 0: -120,000<br>
-            السنة 1: استرداد 35,000 (المتبقي 85,000).<br>
-            السنة 2: استرداد 35,000 (المتبقي 50,000).<br>
-            السنة 3: التدفق 90,000 (نحتاج فقط 50,000 منها).<br>
-            الجزء من السنة الثالثة = $$50,000 / 90,000 = 0.56$$<br>
-            فترة الاسترداد = 2.56 سنة تقريبًا.<br><br>
-            
-            <strong>القرار:</strong> يجب اختيار المشروع (أ) لأن فترة استرداده (2 سنة) تقع ضمن الحد الأقصى المقبول للشركة (سنتين)، بينما المشروع (ب) يتجاوز الحد.
+        <div class="qa-block">
+            <div class="question">السؤال الأول: اذكر أربع اختلافات بين الأسهم والسندات؟</div>
+            <div class="answer">
+                <table>
+                    <tr>
+                        <th>وجه المقارنة</th>
+                        <th>السندات (الديون)</th>
+                        <th>الأسهم (الملكية)</th>
+                    </tr>
+                    <tr>
+                        <td>طبيعة الأداة</td>
+                        <td>تعتبر دينًا على الشركة، وحاملها دائن.</td>
+                        <td>تمثل حصة ملكية في الشركة، وحاملها مالك.</td>
+                    </tr>
+                    <tr>
+                        <td>حق التصويت</td>
+                        <td>لا يملك حملة السندات حق التصويت في الإدارة.</td>
+                        <td>يملك حملة الأسهم العادية حق التصويت.</td>
+                    </tr>
+                    <tr>
+                        <td>تاريخ الاستحقاق</td>
+                        <td>لها تاريخ استحقاق محدد يجب فيه سداد أصل الدين.</td>
+                        <td>ليس لها تاريخ استحقاق (دائمة).</td>
+                    </tr>
+                    <tr>
+                        <td>الأولوية في السداد</td>
+                        <td>لهم الأولوية في المطالبة بالدخل والأصول عند الإفلاس.</td>
+                        <td>يأتون في المرتبة الأخيرة (حق متبقي) بعد الدائنين.</td>
+                    </tr>
+                    <tr>
+                        <td>العائد والضريبة</td>
+                        <td>الفائدة تعتبر نفقة وتخصم من الضرائب.</td>
+                        <td>توزيعات الأرباح لا تخفض الدخل الخاضع للضريبة.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="chapter">Chapter 7 & 6</div>
         </div>
-        <div class="chapter">ينتمي هذا السؤال إلى الفصل 8 (Chapter 8).</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_2.jpg" alt="page_2"></div>
-    <div class="qa-box">
-        <div class="question">القسم الأول: صح أم خطأ وتصحيح الأخطاء</div>
-        <div class="answer">
-            <ul>
-                <li><strong>السند بخصم هو السند الذي يكون فيه معدل العائد حتى تاريخ الاستحقاق أعلى من معدل القسيمة (الكوبون).</strong><br>الإجابة: ( صح )<br>التوضيح: عندما يرتفع سعر الفائدة في السوق (العائد المطلوب) ليصبح أعلى من معدل الكوبون، ينخفض سعر السند ويباع بخصم. <span class="chapter">Chapter 6</span></li>
-                <br>
-                <li><strong>الأسهم أقل مخاطر من السندات.</strong><br>الإجابة: ( خطأ )<br>التصحيح: الأسهم أعلى مخاطر من السندات، لأن حملة الأسهم يأتون في المرتبة الأخيرة عند المطالبة بالأصول في حالة الإفلاس، وعوائدهم غير مضمونة. <span class="chapter">Chapter 7 (و Chapter 5)</span></li>
-                <br>
-                <li><strong>معدل العائد الداخلي هو معدل الخصم الذي تتساوى عنده القيمة الحالية للتدفقات النقدية الداخلة مع التكلفة المبدئية.</strong><br>الإجابة: ( صح )<br>التوضيح: معدل العائد الداخلي (IRR) هو المعدل الذي يجعل صافي القيمة الحالية (NPV) يساوي صفرًا، مما يعني تساوي التدفقات الداخلة مع الاستثمار الأولي. <span class="chapter">Chapter 8</span></li>
-                <br>
-                <li><strong>يستخدم الانحراف المعياري لقياس العائد المتوقع بينما يستخدم معامل بيتا لقياس المخاطر الكلية.</strong><br>الإجابة: ( خطأ )<br>التصحيح: يستخدم الانحراف المعياري لقياس المخاطر الكلية (أو التشتت)، بينما يستخدم معامل بيتا لقياس المخاطر النظامية (غير القابلة للتنويع). <span class="chapter">Chapter 5</span></li>
-                <br>
-                <li><strong>التحفظ والتهيب من المخاطر هو موقف تجاه المخاطر حيث يطلب المستثمرون عائد منخفض عند زيادة المخاطر.</strong><br>الإجابة: ( خطأ )<br>التصحيح: المستثمر المتحفظ يطلب عائدًا مرتفعًا (أعلى) كتعويض عند زيادة المخاطر. <span class="chapter">Chapter 5</span></li>
-                <br>
-                <li><strong>خاصية القابلية للاستدعاء هي خاصية تسمح لحاملي السندات بتغيير كل سند إلى عدد محدد من الأسهم العادية.</strong><br>الإجابة: ( خطأ )<br>التصحيح: هذه الخاصية تسمى القابلية للتحويل (Convertible feature). أما "القابلية للاستدعاء" فهي تعطي الحق للشركة المصدرة لإعادة شراء السندات قبل تاريخ الاستحقاق. <span class="chapter">Chapter 6</span></li>
-                <br>
-                <li><strong>معدل القسيمة (الكوبون) هو المبلغ الذي تم افتراضه من قبل الشركة والمبلغ المستحق لحامل السند في تاريخ الاستحقاق.</strong><br>الإجابة: ( خطأ )<br>التصحيح: المبلغ المستحق في تاريخ الاستحقاق هو القيمة الاسمية (Par Value). أما معدل الكوبون فهو النسبة المئوية التي تحدد الفائدة الدورية المدفوعة. <span class="chapter">Chapter 6</span></li>
-                <br>
-                <li><strong>معامل الارتباط هو مقياس نسبي للمخاطر غير القابلة للتنويع. وهو مؤشر لدرجة حركة عائدات الأصول استجابة في مخاطر السوق.</strong><br>الإجابة: ( خطأ )<br>التصحيح: هذا تعريف معامل بيتا (Beta). معامل الارتباط يقيس درجة العلاقة بين حركة أصلين (يستخدم للتنويع)، بينما بيتا هي مقياس المخاطر غير القابلة للتنويع واستجابة السهم للسوق. <span class="chapter">Chapter 5</span></li>
-            </ul>
+        <div class="qa-block">
+            <div class="question">السؤال الثاني: حساب صافي القيمة الحالية (NPV) وفترة الاسترداد</div>
+            <div class="answer">
+                <p><strong>أ- حساب صافي القيمة الحالية (NPV) عند معدل خصم 9%:</strong></p>
+                <div class="math-block">
+                    $$NPV_A = \frac{40,000}{(1.09)^1} + \frac{40,000}{(1.09)^2} + \frac{40,000}{(1.09)^3} - 80,000$$
+                    $$NPV_A = 21,251 \text{ دولار تقريبًا}$$
+                    <br>
+                    $$NPV_B = \frac{35,000}{(1.09)^1} + \frac{35,000}{(1.09)^2} + \frac{90,000}{(1.09)^3} - 120,000$$
+                    $$NPV_B = 11,066 \text{ دولار تقريبًا}$$
+                </div>
+                <p><strong>القرار:</strong> يجب اختيار المشروع (أ) لأنه يحقق NPV أعلى.</p>
+                
+                <p><strong>ب- حساب فترة الاسترداد (الحد الأقصى سنتين):</strong></p>
+                <ul>
+                    <li><strong>المشروع (أ):</strong> يتم استرداد التكلفة (80,000) بالكامل في السنة الثانية (40,000 + 40,000). <br>فترة الاسترداد = 2 سنة.</li>
+                    <li><strong>المشروع (ب):</strong> السنة 1 (35,000) + السنة 2 (35,000) = 70,000. المتبقي 50,000 يتم تغطيته من تدفق السنة الثالثة (90,000). <br>فترة الاسترداد = 2.56 سنة تقريبًا.</li>
+                </ul>
+                <p><strong>القرار:</strong> اختيار المشروع (أ) لأن فترة استرداده (2 سنة) تقع ضمن الحد الأقصى المقبول.</p>
+            </div>
+            <div class="chapter">Chapter 8</div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_3.jpg" alt="page_3"></div>
-    
-    <div class="qa-box">
-        <div class="question">1) حساب السعر الحالي للسهم (النمو المستمر)</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> توزيعات الأرباح الحالية ($$D_0$$) = 15$، معدل النمو ($$g$$) = 8%، معدل العائد المطلوب ($$r$$) = 10%<br>
-            <strong>الحل:</strong><br>
-            نستخدم نموذج جوردون للنمو المستمر. أولاً نحسب التوزيعات المتوقعة للعام القادم ($$D_1$$):<br>
-            $$D_1 = D_0 \times (1 + g) = 15 \times (1 + 0.08) = 16.2 \$$$<br>
-            ثم نطبق معادلة السعر الحالي ($$P_0$$):<br>
-            $$P_0 = \frac{D_1}{r - g}$$
-            $$P_0 = \frac{16.2}{0.10 - 0.08} = \frac{16.2}{0.02} = \mathbf{810\$}$$
+    <section class="page-section" id="page2">
+        <div class="page-header">
+            <h2>الصفحة 2 (Page_2)</h2>
         </div>
-        <div class="chapter">Chapter 7 (تقييم الأسهم).</div>
-    </div>
+        <img src="REV1-23/page_2.jpg" alt="page_2" class="page-image">
 
-    <div class="qa-box">
-        <div class="question">2) حساب سعر السهم بعد 5 سنوات</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> توزيعات الأرباح الحالية ($$D_0$$) = 20$، معدل النمو ($$g$$) = 5%، معدل العائد المطلوب ($$r$$) = 7%<br>
-            <strong>المطلوب:</strong> السعر بعد 5 سنوات ($$P_5$$).<br>
-            <strong>الحل:</strong><br>
-            الطريقة الأسرع: حساب السعر الحالي ($$P_0$$) ثم تنميته.<br>
-            $$D_1 = 20 \times (1.05) = 21$$
-            $$P_0 = \frac{21}{0.07 - 0.05} = \frac{21}{0.02} = 1,050 \$$$<br>
-            $$P_5 = P_0 \times (1 + g)^5$$
-            $$P_5 = 1,050 \times (1.05)^5 \approx 1,050 \times 1.2763 \approx \mathbf{1,340.1\$}$$
+        <div class="qa-block">
+            <div class="question">السند بخصم هو السند الذي يكون فيه معدل العائد حتى تاريخ الاستحقاق أعلى من معدل القسيمة (الكوبون).</div>
+            <div class="answer">
+                <strong>( صح )</strong><br>
+                التوضيح: عندما يرتفع سعر الفائدة في السوق عن معدل الكوبون، ينخفض سعر السند ويباع بخصم.
+            </div>
+            <div class="chapter">Chapter 6</div>
         </div>
-        <div class="chapter">Chapter 7 (تقييم الأسهم).</div>
-    </div>
 
-    <div class="qa-box">
-        <div class="question">3) القيمة الحالية للتدفقات النقدية المختلطة</div>
-        <div class="answer">
-            <strong>المعطيات (معدل الخصم 6%):</strong> دفعات 10,000$ (سنة 1-4)، دفعة وحيدة (سالبة) -6,000$ (سنة 5)، دفعات 8,000$ (سنة 6-10).<br>
-            <strong>خطوات الحل:</strong><br>
-            1. الجزء الأول (سنوات 1-4): قيمة حالية لدفعة منتظمة (Annuity).<br>
-            $$PV_1 = 10,000 \times \left[ \frac{1 - (1.06)^{-4}}{0.06} \right] \approx 10,000 \times 3.4651 = 34,651 \$$$<br>
-            2. الجزء الثاني (سنة 5): قيمة حالية لمبلغ منفرد.<br>
-            $$PV_2 = \frac{-6,000}{(1.06)^5} \approx -6,000 \times 0.7473 = -4,483.8 \$$$<br>
-            3. الجزء الثالث (سنوات 6-10): دفعة منتظمة مؤجلة.<br>
-            نحسب قيمتها عند السنة 5 أولاً: $$Value_5 = 8,000 \times \left[ \frac{1 - (1.06)^{-5}}{0.06} \right] \approx 8,000 \times 4.2124 = 33,699.2 \$$$<br>
-            نخصم هذا المبلغ من السنة 5 إلى السنة 0: $$PV_3 = \frac{33,699.2}{(1.06)^5} \approx 33,699.2 \times 0.7473 = 25,183.4 \$$$<br>
-            <strong>إجمالي القيمة الحالية:</strong><br>
-            $$Total PV = 34,651 - 4,483.8 + 25,183.4 = \mathbf{55,350.6\$}$$
+        <div class="qa-block">
+            <div class="question">الأسهم أقل مخاطر من السندات.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong><br>
+                التصحيح: الأسهم أعلى مخاطر من السندات، لأن حملة الأسهم يأتون في المرتبة الأخيرة عند الإفلاس وعوائدهم غير مضمونة.
+            </div>
+            <div class="chapter">Chapter 7</div>
         </div>
-        <div class="chapter">Chapter 4 - Part 2 (القيمة الزمنية للنقود).</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_4.jpg" alt="page_4"></div>
-    <div class="qa-box">
-        <div class="question">4) حساب العائد المتوقع على المحفظة المالية</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> استثمار في "س": 8,000$ (عائد 10%)، استثمار في "ص": 6,000$ (عائد 8%)، استثمار في "ع": 6,000$ (عائد 16%).<br>
-            <strong>الحل:</strong><br>
-            1. حساب القيمة الكلية للمحفظة: $$8,000 + 6,000 + 6,000 = 20,000 \$$$<br>
-            2. حساب وزن كل سهم ($$w$$):<br>
-            وزن "س" = $$8,000 / 20,000 = 0.40$$<br>
-            وزن "ص" = $$6,000 / 20,000 = 0.30$$<br>
-            وزن "ع" = $$6,000 / 20,000 = 0.30$$<br>
-            3. حساب العائد المتوقع للمحفظة ($$E(r_p)$$):<br>
-            $$E(r_p) = (0.40 \times 10\%) + (0.30 \times 8\%) + (0.30 \times 16\%)$$
-            $$E(r_p) = 4\% + 2.4\% + 4.8\% = \mathbf{11.2\%}$$
+        <div class="qa-block">
+            <div class="question">معدل العائد الداخلي هو معدل الخصم الذي تتساوى عنده القيمة الحالية للتدفقات النقدية الداخلة مع التكلفة المبدئية.</div>
+            <div class="answer">
+                <strong>( صح )</strong><br>
+                التوضيح: هو المعدل الذي يجعل NPV يساوي صفرًا.
+            </div>
+            <div class="chapter">Chapter 8</div>
         </div>
-        <div class="chapter">Chapter 5 (المخاطر والعائد).</div>
-    </div>
-    
-    <div class="qa-box">
-        <div class="question">5) حساب سعر السند (بعد مرور 3 سنوات)</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> القيمة الاسمية ($$M$$) = 1,000$، تاريخ الاستحقاق الأصلي = 10 سنوات (مر منها 3 سنوات، إذن المتبقي $$n = 7$$ سنوات)، YTM = 8%، معدل الكوبون = 9% ($$PMT = 90\$$).<br>
-            <strong>الحل:</strong><br>
-            القيمة الحالية للكوبونات (لمدة 7 سنوات):<br>
-            $$PV_{coupons} = 90 \times \left[ \frac{1 - (1.08)^{-7}}{0.08} \right] \approx 90 \times 5.2064 = 468.58 \$$$<br>
-            القيمة الحالية للقيمة الاسمية:<br>
-            $$PV_{par} = \frac{1,000}{(1.08)^7} \approx 1,000 \times 0.5835 = 583.50 \$$$<br>
-            سعر السند:<br>
-            $$Price = 468.58 + 583.50 = \mathbf{1,052.08\$}$$
-        </div>
-        <div class="chapter">Chapter 6 (أسعار الفائدة وتقييم السندات).</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_5.jpg" alt="page_5"></div>
-    <div class="qa-box">
-        <div class="question">7) حساب معدل العائد الخالي من المخاطر</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> سعر الفائدة الاسمي ($$r$$) = 14.2%، علاوة المخاطرة ($$RP$$) = 4.1%.<br>
-            <strong>الحل:</strong><br>
-            $$r = R_F + RP$$
-            $$14.2\% = R_F + 4.1\%$$
-            $$R_F = 14.2\% - 4.1\% = \mathbf{10.1\%}$$
+        <div class="qa-block">
+            <div class="question">يستخدم الانحراف المعياري لقياس العائد المتوقع بينما يستخدم معامل بيتا لقياس المخاطر الكلية.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong><br>
+                التصحيح: يستخدم الانحراف المعياري لقياس المخاطر الكلية، بينما يستخدم معامل بيتا لقياس المخاطر النظامية (غير القابلة للتنويع).
+            </div>
+            <div class="chapter">Chapter 5</div>
         </div>
-        <div class="chapter">Chapter 6.</div>
-    </div>
-    
-    <div class="qa-box">
-        <div class="question">8) حساب العائد على الأصل (ع) باستخدام CAPM</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> بيتا ($$\beta$$) = 0.5، العائد الخالي من المخاطر ($$R_F$$) = 6%، عائد السوق ($$R_m$$) = 21%.<br>
-            <strong>الحل:</strong><br>
-            $$r = R_F + \beta \times (R_m - R_F)$$
-            $$r = 6\% + 0.5 \times (21\% - 6\%)$$
-            $$r = 6\% + 7.5\% = \mathbf{13.5\%}$$
-        </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
-    
-    <div class="qa-box">
-        <div class="question">9) فترة الاسترداد للمشروعين س و ص</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> التكلفة الأولية = 6,500$. فترة الاسترداد القصوى = 4 سنوات.<br>
-            <strong>حساب فترة استرداد المشروع (س):</strong><br>
-            السنة 1: 3,000 (المتبقي 3,500)<br>
-            السنة 2: 2,800 (المتبقي 700)<br>
-            السنة 3: التدفق 1,700 (نحتاج 700 فقط).<br>
-            الكسر من السنة 3: $$700 / 1,700 = 0.41$$<br>
-            فترة الاسترداد (س) = 2.41 سنة.<br><br>
-            
-            <strong>حساب فترة استرداد المشروع (ص):</strong><br>
-            السنة 1: 1,300 (المتبقي 5,200)<br>
-            السنة 2: 3,000 (المتبقي 2,200)<br>
-            السنة 3: 2,100 (المتبقي 100)<br>
-            السنة 4: التدفق 1,500 (نحتاج 100 فقط).<br>
-            الكسر من السنة 4: $$100 / 1,500 = 0.07$$<br>
-            فترة الاسترداد (ص) = 3.07 سنة.<br><br>
-            
-            <strong>القرار:</strong> كلا المشروعين مقبول لأن فترة الاسترداد أقل من 4 سنوات، ولكن نختار المشروع (س) لأنه يسترد الأموال بشكل أسرع.
-        </div>
-        <div class="chapter">Chapter 8.</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_6.jpg" alt="page_6"></div>
-    <div class="qa-box">
-        <div class="question">6) اذكر 4 اختلافات بين السندات والأسهم العادية؟</div>
-        <div class="answer">
-            1. <strong>طبيعة الأداة:</strong> السندات أداة دين (قرض)، بينما الأسهم أداة ملكية.<br>
-            2. <strong>الأولوية:</strong> للسندات الأولوية في السداد عند الإفلاس، بينما تأتي الأسهم العادية في المرتبة الأخيرة.<br>
-            3. <strong>العائد:</strong> السندات لها فائدة (كوبون) محددة مسبقًا، بينما الأسهم العادية لها توزيعات أرباح غير مضمونة ومتغيرة.<br>
-            4. <strong>تاريخ الاستحقاق:</strong> السندات لها تاريخ استحقاق محدد، بينما الأسهم ليس لها تاريخ استحقاق (أبدية).
+        <div class="qa-block">
+            <div class="question">التحفظ والتهيب من المخاطر هو موقف تجاه المخاطر حيث يطلب المستثمرون عائد منخفض عند زيادة المخاطر.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong><br>
+                التصحيح: المستثمر المتحفظ يطلب عائدًا مرتفعًا كتعويض عند زيادة المخاطر.
+            </div>
+            <div class="chapter">Chapter 5</div>
         </div>
-        <div class="chapter">Chapter 7 (و Chapter 6).</div>
-    </div>
-    
-    <div class="qa-box">
-        <div class="question">7) اشرح مزايا وعيوب طريقة فترة الاسترداد؟</div>
-        <div class="answer">
-            <strong>المزايا (الإيجابيات):</strong><br>
-            - سهلة الحساب والفهم.<br>
-            - تعطي مؤشرًا لسرعة استرجاع الأموال (السيولة).<br>
-            - تستخدم كمعيار لتجنب المخاطر (كلما قصرت الفترة قلت المخاطرة).<br><br>
-            <strong>العيوب (السلبيات):</strong><br>
-            - تتجاهل القيمة الزمنية للنقود.<br>
-            - تتجاهل التدفقات النقدية التي تحدث بعد فترة الاسترداد.<br>
-            - تعتمد على معيار (فترة قطع) يتم تحديده بشكل شخصي/اعتباطي.
+
+        <div class="qa-block">
+            <div class="question">خاصية القابلية للاستدعاء هي خاصية تسمح لحاملي السندات بتغيير كل سند إلى عدد محدد من الأسهم العادية.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong><br>
+                التصحيح: هذه تسمى القابلية للتحويل (Convertible). أما القابلية للاستدعاء فهي حق للشركة لإعادة شراء السندات قبل الاستحقاق.
+            </div>
+            <div class="chapter">Chapter 6</div>
         </div>
-        <div class="chapter">Chapter 8.</div>
-    </div>
-    
-    <div class="qa-box">
-        <div class="question">8) اشرح المقصود بالمخاطر الغير قابلة للتنويع؟</div>
-        <div class="answer">
-            هي المخاطر التي تعزى إلى عوامل السوق العامة (مثل التضخم، الحروب، أسعار الفائدة، الأزمات الاقتصادية) والتي تؤثر على جميع الشركات والأسهم في السوق تقريبًا. تسمى أيضًا "المخاطر النظامية" أو "مخاطر السوق". لا يمكن التخلص منها أو تقليلها عن طريق تنويع المحفظة الاستثمارية، ويتم قياسها بمعامل بيتا ($$\beta$$).
+
+        <div class="qa-block">
+            <div class="question">معدل القسيمة (الكوبون) هو المبلغ الذي تم اقتراضه من قبل الشركة والمبلغ المستحق لحامل السند في تاريخ الاستحقاق.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong><br>
+                التصحيح: المبلغ المستحق في تاريخ الاستحقاق هو القيمة الاسمية (Par Value). أما معدل الكوبون فهو نسبة الفائدة الدورية.
+            </div>
+            <div class="chapter">Chapter 6</div>
         </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_7.jpg" alt="page_7"></div>
-    <div class="qa-box">
-        <div class="question">القسم الأول: صح أم خطأ وتصحيح الأخطاء</div>
-        <div class="answer">
-            (تم تكرار الأسئلة في الصفحة رقم 2 - مراجعة سريعة):<br>
-            <ul>
-                <li>السند بخصم: ( صح )</li>
-                <li>الأسهم أقل مخاطرة من السندات: ( خطأ ) - الأسهم أعلى مخاطرة.</li>
-                <li>معدل العائد الداخلي هو معدل الخصم الذي يجعل NPV صفر: ( صح ).</li>
-                <li>الانحراف المعياري للعائد المتوقع: ( خطأ ) - الانحراف للمخاطر الكلية، بيتا للنظامية.</li>
-                <li>التحفظ هو طلب عائد منخفض عند زيادة المخاطر: ( خطأ ) - طلب عائد مرتفع.</li>
-                <li>القابلية للاستدعاء تحويل لأسهم: ( خطأ ) - دي القابلية للتحويل.</li>
-                <li>معدل الكوبون هو المبلغ المقترض: ( خطأ ) - المبلغ هو القيمة الاسمية.</li>
-                <li>معامل الارتباط للمخاطر غير القابلة للتنويع: ( خطأ ) - ده بيتا.</li>
-            </ul>
+        <div class="qa-block">
+            <div class="question">معامل الارتباط هو مقياس نسبي للمخاطر غير القابلة للتنويع. وهو مؤشر لدرجة حركة عائدات الأصول استجابة في مخاطر السوق.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong><br>
+                التصحيح: هذا تعريف معامل بيتا (Beta). معامل الارتباط يقيس العلاقة بين حركة أصلين لغرض التنويع.
+            </div>
+            <div class="chapter">Chapter 5</div>
         </div>
-        <div class="chapter">Chapters 5, 6, 7, 8.</div>
-    </div>
-</div>
+    </section>
 
-    <div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_8.jpg" alt="page_8"></div>
-    
-    <div class="qa-box">
-        <div class="question">1- اذكر 4 اختلافات بين السندات والأسهم العادية.</div>
-        <div class="answer">
-            <ul>
-                <li><strong>طبيعة الأداة:</strong> السندات تمثل دينًا (قرضًا) على الشركة وحاملها دائن، بينما الأسهم العادية تمثل حصة ملكية وحاملها مالك.</li>
-                <li><strong>التصويت:</strong> لا يملك حملة السندات حق التصويت في إدارة الشركة، بينما يملك حملة الأسهم العادية حق التصويت (مثل انتخاب مجلس الإدارة).</li>
-                <li><strong>تاريخ الاستحقاق:</strong> السندات لها تاريخ استحقاق محدد يجب فيه سداد أصل الدين، بينما الأسهم ليس لها تاريخ استحقاق (أبدية).</li>
-                <li><strong>الأولوية في السداد:</strong> للسندات الأولوية في المطالبة بالدخل والأصول عند الإفلاس، بينما تأتي الأسهم العادية في المرتبة الأخيرة (حق متبقي).</li>
-                <li><em>نقطة إضافية:</em> الفائدة على السندات تخصم من الضرائب، بينما توزيعات الأسهم لا تخصم.</li>
-            </ul>
+    <section class="page-section" id="page3">
+        <div class="page-header">
+            <h2>الصفحة 3 (Page_3)</h2>
         </div>
-        <div class="chapter">Chapter 7 (تقييم الأسهم) - وأيضًا Chapter 6.</div>
-    </div>
+        <img src="REV1-23/page_3.jpg" alt="page_3" class="page-image">
 
-    <div class="qa-box">
-        <div class="question">2- اشرح مزايا وعيوب طريقة فترة الاسترداد.</div>
-        <div class="answer">
-            <strong>المزايا (الإيجابيات):</strong>
-            <ul>
-                <li>سهلة الحساب والفهم.</li>
-                <li>تقيس سرعة استرداد السيولة (النقد)، مما يعطي مؤشرًا لمخاطر السيولة.</li>
-                <li>تستخدم كمعيار لتجنب المخاطر (كلما قصرت الفترة كانت أقل مخاطرة).</li>
-            </ul>
-            <strong>العيوب (السلبيات):</strong>
-            <ul>
-                <li>تتجاهل القيمة الزمنية للنقود بشكل صريح.</li>
-                <li>تتجاهل التدفقات النقدية التي تحدث بعد فترة الاسترداد (لا تقيس الربحية الكاملة).</li>
-                <li>تعتمد على معيار (فترة قطع) يتم تحديده بشكل شخصي وغير موضوعي أحيانًا.</li>
-            </ul>
+        <div class="qa-block">
+            <div class="question">1) حساب السعر الحالي للسهم (النمو المستمر)</div>
+            <div class="answer">
+                <p>المعطيات: \(D_0 = 15\$\)، \(g = 8\%\)، \(r = 10\%\)</p>
+                <div class="math-block">
+                    $$D_1 = 15 \times (1 + 0.08) = 16.2 \$$$
+                    $$P_0 = \frac{16.2}{0.10 - 0.08} = \frac{16.2}{0.02} = 810 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 7</div>
         </div>
-        <div class="chapter">Chapter 8 (الموازنة الرأسمالية).</div>
-    </div>
 
-    <div class="qa-box">
-        <div class="question">3- اشرح المقصود بالمخاطر الغير قابلة للتنويع.</div>
-        <div class="answer">
-            هي المخاطر التي تعزى إلى عوامل السوق العامة (مثل التضخم، الحروب، التغيرات السياسية، والكساد الاقتصادي) والتي تؤثر على جميع الشركات والأسهم في السوق تقريبًا. تسمى أيضًا "المخاطر النظامية" أو "مخاطر السوق". لا يمكن التخلص منها أو تقليلها عن طريق تنويع المحفظة الاستثمارية، ويتم قياسها بمعامل بيتا ($$\beta$$).
+        <div class="qa-block">
+            <div class="question">2) حساب سعر السهم بعد 5 سنوات</div>
+            <div class="answer">
+                <p>المعطيات: \(D_0 = 20\$\)، \(g = 5\%\)، \(r = 7\%\)</p>
+                <div class="math-block">
+                    $$D_1 = 20 \times 1.05 = 21$$
+                    $$P_0 = \frac{21}{0.07 - 0.05} = 1,050 \$$$
+                    $$P_5 = 1,050 \times (1.05)^5 \approx 1,340.1 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 7</div>
         </div>
-        <div class="chapter">Chapter 5 (المخاطر والعائد).</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_9.jpg" alt="page_9"></div>
-    
-    <div class="qa-box">
-        <div class="question">1- حساب السعر الحالي للسهم (نموذج جوردون)</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> توزيعات الأرباح الحالية ($$D_0$$) = 15$، معدل النمو ($$g$$) = 8%، معدل العائد المطلوب ($$r$$) = 10%.<br>
-            <strong>خطوات الحل:</strong><br>
-            1. نحسب التوزيعات المتوقعة للعام القادم ($$D_1$$):<br>
-            $$D_1 = D_0 \times (1 + g) = 15 \times (1 + 0.08) = 16.2 \$$$<br>
-            2. نطبق معادلة السعر الحالي ($$P_0$$):<br>
-            $$P_0 = \frac{D_1}{r - g} = \frac{16.2}{0.10 - 0.08} = \frac{16.2}{0.02} = \mathbf{810\$}$$
+        <div class="qa-block">
+            <div class="question">3) القيمة الحالية للتدفقات النقدية المختلطة</div>
+            <div class="answer">
+                <p>المعطيات (معدل 6%): 10,000 (س1-4)، -6,000 (س5)، 8,000 (س6-10).</p>
+                <ul>
+                    <li>PV (س1-4): \( 10,000 \times 3.4651 = 34,651\$ \)</li>
+                    <li>PV (س5): \( -6,000 \times 0.7473 = -4,483.8\$ \)</li>
+                    <li>PV (س6-10): نحسب قيمتها عند السنة 5 أولاً (33,699.2) ثم نخصمها للصفر \( \approx 25,183.4\$ \)</li>
+                </ul>
+                <p><strong>الإجمالي:</strong> \( 34,651 - 4,483.8 + 25,183.4 = 55,350.6\$ \)</p>
+            </div>
+            <div class="chapter">Chapter 4</div>
         </div>
-        <div class="chapter">Chapter 7.</div>
-    </div>
+    </section>
 
-    <div class="qa-box">
-        <div class="question">2- حساب سعر السهم بعد 5 سنوات</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> $$D_0 = 20\$$, $$g = 5\%$$, $$r = 7\%$$<br>
-            <strong>المطلوب:</strong> السعر بعد 5 سنوات ($$P_5$$).<br>
-            <strong>خطوات الحل:</strong><br>
-            نوجد $$P_0$$ أولاً:<br>
-            $$D_1 = 20 \times (1.05) = 21$$
-            $$P_0 = \frac{21}{0.07 - 0.05} = \frac{21}{0.02} = 1,050 \$$$<br>
-            الآن نحسب السعر المستقبلي بعد 5 سنوات ($$P_5$$):<br>
-            $$P_5 = P_0 \times (1 + g)^5 = 1,050 \times (1.05)^5$$
-            $$P_5 = 1,050 \times 1.27628 \approx \mathbf{1,340.1\$}$$
+    <section class="page-section" id="page4">
+        <div class="page-header">
+            <h2>الصفحة 4 (Page_4)</h2>
         </div>
-        <div class="chapter">Chapter 7.</div>
-    </div>
-</div>
+        <img src="REV1-23/page_4.jpg" alt="page_4" class="page-image">
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_10.jpg" alt="page_10"></div>
-    <div class="qa-box">
-        <div class="question">3- ما هي القيمة الحالية للتدفقات النقدية التالية (معدل الخصم 6%)</div>
-        <div class="answer">
-            <strong>المعطيات والتحليل:</strong><br>
-            سنوات 1-4: دفعة منتظمة (Annuity) بقيمة 10,000$.<br>
-            سنة 5: مبلغ منفرد (Single Amount) بقيمة -6,000$ (سالب).<br>
-            سنوات 6-10: دفعة منتظمة (Annuity) بقيمة 8,000$.<br><br>
-            <strong>خطوات الحل:</strong><br>
-            أولاً: القيمة الحالية لدفعة السنوات 1-4:<br>
-            $$PV_1 = 10,000 \times \left[ \frac{1 - (1.06)^{-4}}{0.06} \right] = 10,000 \times 3.4651 = \mathbf{34,651\$}$$<br>
-            
-            ثانيًا: القيمة الحالية للمبلغ السالب في السنة 5:<br>
-            $$PV_2 = \frac{-6,000}{(1.06)^5} = \frac{-6,000}{1.3382} \approx \mathbf{-4,483.6\$}$$<br>
-            
-            ثالثًا: القيمة الحالية لدفعة السنوات 6-10 (دفعة مؤجلة):<br>
-            نحسب قيمتها عند نهاية السنة 5: $$Val_5 = 8,000 \times \left[ \frac{1 - (1.06)^{-5}}{0.06} \right] = 8,000 \times 4.2124 = 33,699.2 \$$$<br>
-            نخصم هذا المبلغ من السنة 5 إلى السنة 0: $$PV_3 = \frac{33,699.2}{(1.06)^5} = \frac{33,699.2}{1.3382} \approx \mathbf{25,182.5\$}$$<br>
-            
-            رابعًا: إجمالي القيمة الحالية (Total PV):<br>
-            $$PV_{Total} = 34,651 + (-4,483.6) + 25,182.5 = \mathbf{55,349.9\$} \approx \mathbf{55,350\$}$$
+        <div class="qa-block">
+            <div class="question">4) حساب العائد المتوقع على المحفظة المالية</div>
+            <div class="answer">
+                <p>قيمة المحفظة: 20,000$ (س: 8000، ص: 6000، ع: 6000)</p>
+                <p>الأوزان: س (40%)، ص (30%)، ع (30%)</p>
+                <div class="math-block">
+                    $$E(r_p) = (0.40 \times 10\%) + (0.30 \times 8\%) + (0.30 \times 16\%)$$
+                    $$E(r_p) = 4\% + 2.4\% + 4.8\% = 11.2\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 5</div>
         </div>
-        <div class="chapter">Chapter 4 - Part 2 (القيمة الزمنية للنقود - التدفقات المختلطة).</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_11.jpg" alt="page_11"></div>
-    <div class="qa-box">
-        <div class="question">4) حساب العائد المتوقع على المحفظة المالية</div>
-        <div class="answer">
-            <strong>تحليل السؤال:</strong><br>
-            بما أن مجموع الاحتمالات/الأوزان في المحفظة يجب أن يساوي 1، فإن وزن السهم "ص" المجهول هو: $$1 - (0.50 + 0.25) = 0.25$$<br>
-            <strong>المعطيات:</strong> س: 10% (0.50)، ص: 8% (0.25)، ع: 16% (0.25).<br>
-            <strong>الحل:</strong><br>
-            $$\text{العائد المتوقع} = (10\% \times 0.50) + (8\% \times 0.25) + (16\% \times 0.25)$$
-            $$= 5\% + 2\% + 4\% = \mathbf{11\%}$$
+        <div class="qa-block">
+            <div class="question">5) حساب سعر السند (بعد مرور 3 سنوات)</div>
+            <div class="answer">
+                <p>المتبقي \(n=7\) سنوات، YTM = 8%، الكوبون = 9% (90$).</p>
+                <div class="math-block">
+                    $$PV_{coupons} = 90 \times 5.2064 = 468.58 \$$$
+                    $$PV_{par} = 1,000 \times 0.5835 = 583.50 \$$$
+                    $$Price = 468.58 + 583.50 = 1,052.08 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 6</div>
         </div>
-        <div class="chapter">Chapter 5 (المخاطر والعائد - عائد المحفظة).</div>
-    </div>
+    </section>
 
-    <div class="qa-box">
-        <div class="question">5) حساب سعر السند (ص)</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> القيمة الاسمية = 1,000$، المدة = 5 سنوات، YTM = 12%، الكوبون = 10% (نصف سنوي).<br>
-            <strong>التعديلات للدفع نصف السنوي:</strong><br>
-            عدد الفترات ($$n$$) = 10.<br>
-            معدل الفائدة الدوري ($$r$$) = 6%.<br>
-            قيمة الكوبون الدوري ($$PMT$$) = 50$.<br>
-            <strong>الحل:</strong><br>
-            1. قيمة الكوبونات: $$50 \times \left[ \frac{1 - (1.06)^{-10}}{0.06} \right] \approx 50 \times 7.360 = 368 \$$$<br>
-            2. قيمة المبلغ الاسمي: $$\frac{1,000}{(1.06)^{10}} \approx 558.4 \$$$<br>
-            3. السعر الإجمالي: $$368 + 558.4 = \mathbf{926.4\$}$$
+    <section class="page-section" id="page5">
+        <div class="page-header">
+            <h2>الصفحة 5 (Page_5)</h2>
         </div>
-        <div class="chapter">Chapter 6 (تقييم السندات).</div>
-    </div>
-</div>
+        <img src="REV1-23/page_5.jpg" alt="page_5" class="page-image">
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_12.jpg" alt="page_12"></div>
-    <div class="qa-box">
-        <div class="question">7) حساب معدل العائد الخالي من المخاطر</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> سعر الفائدة الاسمي = 14.2%، علاوة المخاطرة = 4.1%.<br>
-            <strong>الحل:</strong><br>
-            $$\text{الاسمي} = R_F + \text{علاوة المخاطرة}$$
-            $$14.2\% = R_F + 4.1\%$$
-            $$R_F = 14.2\% - 4.1\% = \mathbf{10.1\%}$$
+        <div class="qa-block">
+            <div class="question">7) حساب معدل العائد الخالي من المخاطر</div>
+            <div class="answer">
+                <p>الاسمي = 14.2%، علاوة المخاطرة = 4.1%</p>
+                <div class="math-block">
+                    $$R_F = 14.2\% - 4.1\% = 10.1\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 6</div>
         </div>
-        <div class="chapter">Chapter 6 (أسعار الفائدة).</div>
-    </div>
-    
-    <div class="qa-box">
-        <div class="question">8) حساب العائد على الأصل (ع) باستخدام CAPM</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> بيتا ($$\beta$$) = 0.5، $$R_F$$ = 6%، عائد السوق ($$R_m$$) = 21%.<br>
-            <strong>الحل:</strong><br>
-            $$r = R_F + \beta \times (R_m - R_F)$$
-            $$r = 6\% + 0.5 \times (21\% - 6\%)$$
-            $$r = 6\% + 7.5\% = \mathbf{13.5\%}$$
+
+        <div class="qa-block">
+            <div class="question">8) حساب العائد على الأصل (ع) باستخدام CAPM</div>
+            <div class="answer">
+                <p>بيتا = 0.5، \(R_F = 6\%\)، \(R_m = 21\%\)</p>
+                <div class="math-block">
+                    $$r = 6\% + 0.5 \times (21\% - 6\%) = 13.5\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 5</div>
         </div>
-        <div class="chapter">Chapter 5 (المخاطر والعائد).</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_13.jpg" alt="page_13"></div>
-    <div class="qa-box">
-        <div class="question">9) اختيار المشروع باستخدام طريقة فترة الاسترداد</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> التكلفة = 6,500$. الحد الأقصى = 4 سنوات.<br>
-            <strong>الحل:</strong><br>
-            أولاً: فترة استرداد المشروع (س):<br>
-            السنة 1: 3,000 (باقي 3,500)<br>
-            السنة 2: 2,800 (باقي 700)<br>
-            السنة 3: التدفق 1,700. الكسر = $$700/1700 = 0.41$$<br>
-            النتيجة = 2.41 سنة.<br><br>
-            
-            ثانياً: فترة استرداد المشروع (ص):<br>
-            السنة 1: 1,300 (باقي 5,200)<br>
-            السنة 2: 3,000 (باقي 2,200)<br>
-            السنة 3: 2,100 (باقي 100)<br>
-            السنة 4: التدفق 1,500. الكسر = $$100/1500 = 0.07$$<br>
-            النتيجة = 3.07 سنة.<br><br>
-            
-            <strong>القرار:</strong> كلا المشروعين مقبول، ولكن يتم اختيار المشروع (س) لأنه يسترد الأموال في وقت أقصر.
+        <div class="qa-block">
+            <div class="question">9) فترة الاسترداد للمشروعين س و ص</div>
+            <div class="answer">
+                <p>التكلفة 6,500$. الحد الأقصى 4 سنوات.</p>
+                <ul>
+                    <li><strong>المشروع س:</strong> يسترد المبلغ في 2.41 سنة.</li>
+                    <li><strong>المشروع ص:</strong> يسترد المبلغ في 3.07 سنة.</li>
+                </ul>
+                <p><strong>القرار:</strong> نختار المشروع (س) لأنه الأسرع استرداداً.</p>
+            </div>
+            <div class="chapter">Chapter 8</div>
         </div>
-        <div class="chapter">Chapter 8 (الموازنة الرأسمالية).</div>
-    </div>
-</div>
+    </section>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_14.jpg" alt="page_14"></div>
-    <div class="qa-box">
-        <div class="question">1- حساب القيمة الحالية للتدفقات النقدية المختلطة</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> 600$ (س1-4)، -500$ (س5)، 900$ (س6-10). معدل الخصم 10%.<br>
-            <strong>خطوات الحل:</strong><br>
-            1. القيمة الحالية للدفعة (س1-4): $$PV_1 = 600 \times 3.1699 \approx 1,901.9\$$$<br>
-            2. القيمة الحالية للمبلغ السالب (س5): $$PV_2 = \frac{-500}{(1.10)^5} \approx -310.5\$$$<br>
-            3. القيمة الحالية للدفعة المؤجلة (س6-10):<br>
-            عند السنة 5: $$3,411.7\$$$ -> خصم للحاضر: $$PV_3 = 2,118.3\$$$<br>
-            4. إجمالي القيمة الحالية: $$PV_{Total} = 1,901.9 - 310.5 + 2,118.3 = \mathbf{3,709.7\$}$$
+    <section class="page-section" id="page6">
+        <div class="page-header">
+            <h2>الصفحة 6 (Page_6)</h2>
         </div>
-        <div class="chapter">Chapter 4 - Part 2.</div>
-    </div>
+        <img src="REV1-23/page_6.jpg" alt="page_6" class="page-image">
 
-    <div class="qa-box">
-        <div class="question">2- تقييم السندات (حساب الفائدة الاسمية وسعر السوق)</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> القيمة الاسمية = 1,000$، المتبقي = 18 سنة، الكوبون = 12.85% (نصف سنوي)، الفائدة الحقيقية = 4.13%، التضخم = 2.67%، علاوة المخاطر = 2.66%.<br><br>
-            <strong>أ) احسب سعر الفائدة الاسمي ($$r$$)؟</strong><br>
-            $$r = 4.13\% + 2.67\% + 2.66\% = \mathbf{9.46\%}$$<br><br>
-            
-            <strong>ب) احسب سعر السوق للسندات اليوم؟</strong><br>
-            $$n = 36$$ فترة. $$r = 4.73\%$$. $$PMT = 64.25\$$$.<br>
-            1. قيمة الكوبونات: $$1,100.9\$$$<br>
-            2. قيمة المبلغ الاسمي: $$189.5\$$$<br>
-            3. سعر السند: $$1,100.9 + 189.5 = \mathbf{1,290.4\$}$$
+        <div class="qa-block">
+            <div class="question">6) اذكر 4 اختلافات بين السندات والأسهم العادية؟</div>
+            <div class="answer">
+                <ul>
+                    <li><strong>طبيعة الأداة:</strong> السندات دين (قرض)، الأسهم ملكية.</li>
+                    <li><strong>الأولوية:</strong> السندات لها أولوية السداد عند الإفلاس، الأسهم تأتي أخيرًا.</li>
+                    <li><strong>العائد:</strong> السندات لها فائدة ثابتة، الأسهم لها توزيعات متغيرة.</li>
+                    <li><strong>تاريخ الاستحقاق:</strong> السندات لها تاريخ محدد، الأسهم أبدية.</li>
+                </ul>
+            </div>
+            <div class="chapter">Chapter 7 & 6</div>
         </div>
-        <div class="chapter">Chapter 6 (أسعار الفائدة وتقييم السندات).</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_15.jpg" alt="page_15"></div>
-    <div class="qa-box">
-        <div class="question">4 - في حالة تقنين أو ترشيد رأس المال (Capital Rationing):</div>
-        <div class="answer">
-            <strong>الإجابة الصحيحة: (ب)</strong> يكون لدى الشركة مبالغ مالية محدودة، والعديد من المشاريع تتنافس للحصول على تلك الموارد المالية.<br>
-            <strong>التعليل:</strong> يُعرف ترشيد رأس المال بأنه الحالة التي تمتلك فيها الشركة ميزانية محدودة مما يضطرها لترتيب واختيار أفضل المشاريع.
+        <div class="qa-block">
+            <div class="question">7) اشرح مزايا وعيوب طريقة فترة الاسترداد؟</div>
+            <div class="answer">
+                <p><strong>المزايا:</strong> سهلة الحساب والفهم، تعطي مؤشرًا للسيولة، تقلل المخاطر.</p>
+                <p><strong>العيوب:</strong> تتجاهل القيمة الزمنية للنقود، تتجاهل التدفقات بعد فترة الاسترداد، تعتمد على معيار شخصي.</p>
+            </div>
+            <div class="chapter">Chapter 8</div>
         </div>
-        <div class="chapter">Chapter 8.</div>
-    </div>
 
-    <div class="qa-box">
-        <div class="question">5 - هو مقياس نسبي للمخاطر غير القابلة للتنويع:</div>
-        <div class="answer">
-            <strong>الإجابة الصحيحة: (ج) معامل بيتا</strong><br>
-            <strong>التعليل:</strong> يُعرف معامل بيتا ($$\beta$$) نصاً بأنه مقياس نسبي للمخاطر غير القابلة للتنويع (النظامية).
+        <div class="qa-block">
+            <div class="question">8) اشرح المقصود بالمخاطر الغير قابلة للتنويع؟</div>
+            <div class="answer">
+                هي المخاطر الناتجة عن عوامل السوق العامة (تضخم، حروب، كساد) وتؤثر على جميع الشركات. تسمى "المخاطر النظامية" ولا يمكن التخلص منها بالتنويع. تقاس بمعامل بيتا (\(\beta\)).
+            </div>
+            <div class="chapter">Chapter 5</div>
         </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
+    </section>
 
-    <div class="qa-box">
-        <div class="question">6 - موقف تجاه المخاطر حيث يختار المستثمرون الاستثمار ذي المخاطر المرتفعة:</div>
-        <div class="answer">
-            <strong>الإجابة الصحيحة: (أ) تقبل المخاطر (Risk seeking)</strong><br>
-            <strong>التعليل:</strong> هو الموقف الذي يفضل فيه المستثمر الاستثمارات ذات المخاطر الأكبر بغض النظر عن مستوى العائد.
+    <section class="page-section" id="page7">
+        <div class="page-header">
+            <h2>الصفحة 7 (Page_7) - صح أم خطأ</h2>
         </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
+        <img src="REV1-23/page_7.jpg" alt="page_7" class="page-image">
 
-    <div class="qa-box">
-        <div class="question">7 - التنويع والمخاطر:</div>
-        <div class="answer">
-            <strong>الإجابة الصحيحة: (ج) الكلية، الغير نظامية، النظامية</strong><br>
-            <strong>التعليل:</strong> التنويع يقلل المخاطر <em>الكلية</em>. المخاطر التي يمكن التخلص منها تسمى <em>الغير نظامية</em>. المخاطر التي لا يمكن التخلص منها تسمى <em>النظامية</em>.
+        <div class="qa-block">
+            <div class="question">السند بخصم هو السند الذي يكون فيه معدل العائد حتى تاريخ الاستحقاق أعلى من معدل القسيمة.</div>
+            <div class="answer"><strong>( صح )</strong></div>
+            <div class="chapter">Chapter 6</div>
         </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
-</div>
 
-
-
-    <div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_16.jpg" alt="page_16"></div>
-    <div class="qa-box">
-        <div class="question">السؤال الأول: الإجابة صح أم خطأ وتصحيح الأخطاء إن وجدت</div>
-        <div class="answer">
-            <ul>
-                <li><strong>هناك علاقة عكسية بين القيمة الحالية وسعر الفائدة.</strong><br>( صح ) - التعليل: كلما زاد سعر الفائدة، انخفضت القيمة الحالية.</li>
-                <li><strong>تقليل المخاطر من خلال زيادة عدد الأصول يسمى التنويع.</strong><br>( صح ).</li>
-                <li><strong>ليس لحملة الأسهم الممتازة الحق في التصويت.</strong><br>( صح ).</li>
-                <li><strong>السندات تحقق ميزة ضريبية. بينما الأسهم العادية لا تحقق ميزة ضريبية.</strong><br>( صح ) - التعليل: الفائدة تخصم من الضرائب.</li>
-                <li><strong>من عيوب فترة الاسترداد أنها لا تراعي القيمة الزمنية للنقود.</strong><br>( صح ).</li>
-                <li><strong>حتى تقبل الشركة المشروع يجب أن يكون معدل العائد الداخلي أقل من تكلفة رأس المال.</strong><br>( خطأ ) - التصحيح: يجب أن يكون أكبر (أعلى).</li>
-                <li><strong>تشبه الأسهم الممتازة الأسهم العادية من حيث أن توزيعات أرباحها ثابتة.</strong><br>( خطأ ) - التصحيح: تشبه الأسهم الممتازة السندات في ثبات الأرباح.</li>
-                <li><strong>معامل بيتا هو مقياس للمخاطر المتعلقة بالعوامل الاقتصادية والسوقية.</strong><br>( صح ).</li>
-                <li><strong>يسمى معدل الخصم في حالة السندات بالعائد حتى موعد الاستحقاق.</strong><br>( صح ).</li>
-                <li><strong>في حالة المشاريع المستقلة، فإن قبول مشروع لا يعني بالضرورة رفض المشروع الاخر.</strong><br>( صح ).</li>
-            </ul>
+        <div class="qa-block">
+            <div class="question">الأسهم أقل مخاطرة من السندات.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong> - الأسهم أعلى مخاطرة.
+            </div>
+            <div class="chapter">Chapter 7</div>
         </div>
-        <div class="chapter">Chapters 4, 5, 6, 7, 8.</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_17.jpg" alt="page_17"></div>
-    <div class="qa-box">
-        <div class="question">1- حساب معامل بيتا للمحفظة الاستثمارية</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> ص (3,000، بيتا 2)، ع (4,000، بيتا 1.5)، س (3,000، بيتا 1.25).<br>
-            <strong>الخطوات:</strong><br>
-            1. إجمالي المحفظة = 10,000$.<br>
-            2. الأوزان: ص (0.30)، ع (0.40)، س (0.30).<br>
-            3. بيتا المحفظة: $$ \beta_p = (0.30 \times 2) + (0.40 \times 1.5) + (0.30 \times 1.25) $$
-            $$ \beta_p = 0.60 + 0.60 + 0.375 = \mathbf{1.575} $$
+        <div class="qa-block">
+            <div class="question">معدل العائد الداخلي هو معدل الخصم الذي تتساوى عنده القيمة الحالية للتدفقات مع التكلفة المبدئية.</div>
+            <div class="answer"><strong>( صح )</strong></div>
+            <div class="chapter">Chapter 8</div>
         </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
 
-    <div class="qa-box">
-        <div class="question">2- حساب القيمة الحالية للتدفقات النقدية المختلطة (خصم 8%)</div>
-        <div class="answer">
-            1. دفعة 500$ (س1-4): $$ PV_1 = 1,656.05\$ $$<br>
-            2. مبلغ -400$ (س5): $$ PV_2 = -272.23\$ $$<br>
-            3. دفعة 800$ (س6-11): $$ PV_3 = 2,517.01\$ $$<br>
-            <strong>الإجمالي:</strong> $$ Total PV = \mathbf{3,900.83\$} $$
+        <div class="qa-block">
+            <div class="question">يستخدم الانحراف المعياري لقياس العائد المتوقع بينما يستخدم معامل بيتا لقياس المخاطر الكلية.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong> - الانحراف المعياري للمخاطر الكلية، وبيتا للمخاطر النظامية.
+            </div>
+            <div class="chapter">Chapter 5</div>
         </div>
-        <div class="chapter">Chapter 4 (Part 2).</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_18.jpg" alt="page_18"></div>
-    <div class="qa-box">
-        <div class="question">5- حساب السعر الحالي للسند</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> كوبون 8% (80$)، سوق 6%، مدة 10 سنوات.<br>
-            <strong>الحل:</strong><br>
-            1. القيمة الحالية للكوبونات: $$588.81\$$$<br>
-            2. القيمة الحالية للاسمي: $$558.39\$$$<br>
-            3. السعر: $$1,147.2\$$$
+        <div class="qa-block">
+            <div class="question">التحفظ من المخاطرة يعني طلب عائد منخفض عند زيادة المخاطر.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong> - يطلبون عائدًا مرتفعًا.
+            </div>
+            <div class="chapter">Chapter 5</div>
         </div>
-        <div class="chapter">Chapter 6.</div>
-    </div>
+    </section>
 
-    <div class="qa-box">
-        <div class="question">7- المفاضلة بين المشروعين س و ص (صافي القيمة الحالية NPV)</div>
-        <div class="answer">
-            <strong>المشروع (س):</strong> استثمار -125,000. تدفقات (5,000, 60,000, 70,000).<br>
-            $$NPV_S = -18,275.73\$ \text{ (سالب)}$$<br><br>
-            <strong>المشروع (ص):</strong> استثمار -135,000. تدفقات (60,000, 40,000, 100,000).<br>
-            $$NPV_Y = 27,734.78\$ \text{ (موجب)}$$<br><br>
-            <strong>القرار:</strong> أختار المشروع (ص) لأن صافي القيمة الحالية له موجبة ويضيف ثروة للشركة.
+    <section class="page-section" id="page8">
+        <div class="page-header">
+            <h2>الصفحة 8 (Page_8)</h2>
         </div>
-        <div class="chapter">Chapter 8.</div>
-    </div>
-</div>
-
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_19.jpg" alt="page_19"></div>
-    <div class="qa-box">
-        <div class="question">3- حساب العائد المتوقع على المحفظة المالية</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> س (4,000، 10%)، ص (6,000، 20%).<br>
-            <strong>الحل:</strong><br>
-            $$E(r_p) = (0.40 \times 10\%) + (0.60 \times 20\%) = 4\% + 12\% = \mathbf{16\%}$$
+        <img src="REV1-23/page_8.jpg" alt="page_8" class="page-image">
+        <div class="qa-block">
+            <div class="answer">
+                <em>(محتوى هذه الصفحة تكرار لأسئلة الصفحة 6: الفروقات بين الأسهم والسندات، فترة الاسترداد، والمخاطر غير القابلة للتنويع).</em>
+            </div>
+            <div class="chapter">Chapters 5, 6, 7, 8</div>
         </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
+    </section>
 
-    <div class="qa-box">
-        <div class="question">8- حساب فترة الاسترداد للمشروع (ص)</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> تكلفة 8,000. تدفقات (1,000, 1,600, 3,800, 4,800).<br>
-            <strong>الحساب التراكمي:</strong><br>
-            س1 (1,000) -> باقي 7,000<br>
-            س2 (1,600) -> باقي 5,400<br>
-            س3 (3,800) -> باقي 1,600<br>
-            س4 (4,800). الكسر = $$1,600/4,800 = 0.33$$<br>
-            <strong>فترة الاسترداد = 3.33 سنة.</strong>
+    <section class="page-section" id="page9">
+        <div class="page-header">
+            <h2>الصفحة 9 (Page_9)</h2>
         </div>
-        <div class="chapter">Chapter 8.</div>
-    </div>
+        <img src="REV1-23/page_9.jpg" alt="page_9" class="page-image">
 
-    <div class="qa-box">
-        <div class="question">4- حساب معامل بيتا لسهم الشركة (ع)</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> $$R_F = 3\%$$, علاوة المخاطرة ($$RP_m$$) = 8%، العائد المتوقع = 12%.<br>
-            <strong>الحل:</strong><br>
-            $$12\% = 3\% + \beta \times (8\%)$$
-            $$9\% = 8\beta$$
-            $$\beta = 9/8 = \mathbf{1.125}$$
+        <div class="qa-block">
+            <div class="question">1- حساب السعر الحالي للسهم (نموذج جوردون)</div>
+            <div class="answer">
+                <p>المعطيات: \(D_0 = 15\)، \(g = 8\%\)، \(r = 10\%\)</p>
+                <div class="math-block">
+                    $$D_1 = 15 \times 1.08 = 16.2$$
+                    $$P_0 = \frac{16.2}{0.10 - 0.08} = \frac{16.2}{0.02} = 810 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 7</div>
         </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
-</div>
 
-<div class="page-container">
-    <div class="img-box"><img src="REV1-23/page_20.jpg" alt="page_20"></div>
-    <div class="qa-box">
-        <div class="question">ب) حساب معدل العائد المتوقع على سهم الشركة (ص)</div>
-        <div class="answer">
-            <strong>المعطيات:</strong> بيتا = 1، $$R_F$$ = 5%، علاوة السوق = 10%.<br>
-            <strong>الحل:</strong><br>
-            $$ E(r) = 5\% + 1 \times (10\%) = \mathbf{15\%} $$<br>
-            (ملاحظة: بما أن بيتا = 1، العائد يساوي عائد السوق).
+        <div class="qa-block">
+            <div class="question">2- حساب سعر السهم بعد 5 سنوات</div>
+            <div class="answer">
+                <p>المعطيات: \(D_0 = 20\)، \(g = 5\%\)، \(r = 7\%\)</p>
+                <div class="math-block">
+                    $$P_0 = \frac{20 \times 1.05}{0.02} = 1,050$$
+                    $$P_5 = 1,050 \times (1.05)^5 \approx 1,340.1 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 7</div>
         </div>
-        <div class="chapter">Chapter 5.</div>
-    </div>
+    </section>
 
-    <div class="qa-box">
-        <div class="question">القسم الثالث: الأسئلة المقالية</div>
-        <div class="answer">
-            <strong>1- هناك نوعين من المخاطر على المستوى الدولي. ما هما؟</strong><br>
-            - مخاطر العملة (Currency Risk): الناتجة عن تقلبات أسعار صرف العملات.<br>
-            - المخاطر السياسية (Political Risk): الناتجة عن عدم الاستقرار السياسي أو تغير القوانين.<br><br>
-            
-            <strong>2- ما المقصود بالاستثمارات الرأسمالية المتمانعة (المتعارضة) مع إعطاء مثال؟</strong><br>
-            - المقصود: هي المشاريع التي تتنافس فيما بينها، بحيث يؤدي قبول أحدها إلى رفض الآخر.<br>
-            - مثال: الاختيار بين بناء مصنع أو مبنى إداري على نفس قطعة الأرض.
+    <section class="page-section" id="page10">
+        <div class="page-header">
+            <h2>الصفحة 10 (Page_10)</h2>
         </div>
-        <div class="chapter">Chapter 5 & 8.</div>
-    </div>
-</div>
+        <img src="REV1-23/page_10.jpg" alt="page_10" class="page-image">
 
-<div class="page-container" style="text-align: center; border: 2px dashed #999;">
-    <h3>ملاحظة: الصفحات 21، 22، و 23</h3>
-    <p>هذه الصور (page_21.jpg, page_22.jpg, page_23.jpg) هي نسخ مكررة من الصفحات (16، 17، و 18) التي تم حلها بالتفصيل في الأعلى.</p>
-</div>
+        <div class="qa-block">
+            <div class="question">3- ما هي القيمة الحالية للتدفقات النقدية التالية (معدل الخصم 6%)</div>
+            <div class="answer">
+                <p>سنوات 1-4 (10,000)، سنة 5 (-6,000)، سنوات 6-10 (8,000).</p>
+                <div class="math-block">
+                    $$PV_{Total} = 34,651 + (-4,483.6) + 25,182.5 \approx 55,350 \$$$
+                </div>
+                <p><em>(تم تفصيل الخطوات في حل الصفحة 3 المطابق لهذا السؤال).</em></p>
+            </div>
+            <div class="chapter">Chapter 4 - Part 2</div>
+        </div>
+    </section>
 
-</body>
-</html>
+    <section class="page-section" id="page11">
+        <div class="page-header">
+            <h2>الصفحة 11 (Page_11)</h2>
+        </div>
+        <img src="REV1-23/page_11.jpg" alt="page_11" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">4) حساب العائد المتوقع على المحفظة المالية</div>
+            <div class="answer">
+                <p>الأوزان: س (0.50)، ع (0.25). الوزن المتبقي لـ ص = \(1 - 0.75 = 0.25\).</p>
+                <div class="math-block">
+                    $$E(r_p) = (10\% \times 0.50) + (8\% \times 0.25) + (16\% \times 0.25)$$
+                    $$= 5\% + 2\% + 4\% = 11\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 5</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">5) حساب سعر السند (ص) - نصف سنوي</div>
+            <div class="answer">
+                <p>القيمة الاسمية 1000، 5 سنوات، YTM 12%، كوبون 10% (نصف سنوي).</p>
+                <p>تعديل: \(n = 10\) فترات، \(r = 6\%\)، \(PMT = 50\).</p>
+                <div class="math-block">
+                    $$Price = 50 \times \text{PVIFA}(6\%, 10) + 1000 \times \text{PVIF}(6\%, 10)$$
+                    $$Price = 368 + 558.4 = 926.4 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 6</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page12">
+        <div class="page-header">
+            <h2>الصفحة 12 (Page_12)</h2>
+        </div>
+        <img src="REV1-23/page_12.jpg" alt="page_12" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">7) حساب معدل العائد الخالي من المخاطر</div>
+            <div class="answer">
+                <p>الاسمي = 14.2%، علاوة المخاطرة = 4.1%</p>
+                <div class="math-block">
+                    $$R_F = 14.2\% - 4.1\% = 10.1\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 6</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">8) حساب العائد على الأصل (ع) باستخدام CAPM</div>
+            <div class="answer">
+                <p>\(\beta = 0.5\)، \(R_F = 6\%\)، \(R_m = 21\%\)</p>
+                <div class="math-block">
+                    $$r = 6\% + 0.5 \times (21\% - 6\%) = 13.5\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 5</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page13">
+        <div class="page-header">
+            <h2>الصفحة 13 (Page_13)</h2>
+        </div>
+        <img src="REV1-23/page_13.jpg" alt="page_13" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">9) اختيار المشروع باستخدام طريقة فترة الاسترداد</div>
+            <div class="answer">
+                <p>التكلفة 6,500$. الحد الأقصى 4 سنوات.</p>
+                <ul>
+                    <li>المشروع (س): يسترد في 2.41 سنة.</li>
+                    <li>المشروع (ص): يسترد في 3.07 سنة.</li>
+                </ul>
+                <p><strong>القرار:</strong> اختيار المشروع (س) لأنه الأسرع.</p>
+            </div>
+            <div class="chapter">Chapter 8</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page14">
+        <div class="page-header">
+            <h2>الصفحة 14 (Page_14)</h2>
+        </div>
+        <img src="REV1-23/page_14.jpg" alt="page_14" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">1- حساب القيمة الحالية للتدفقات النقدية المختلطة</div>
+            <div class="answer">
+                <p>600 (س1-4)، -500 (س5)، 900 (س6-10). معدل الخصم 10%.</p>
+                <div class="math-block">
+                    $$PV_1 = 1,901.9$$
+                    $$PV_2 = -310.5$$
+                    $$PV_3 = 2,118.3$$
+                    $$Total = 3,709.7 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 4</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">2- تقييم السندات (الفائدة الاسمية وسعر السوق)</div>
+            <div class="answer">
+                <p><strong>أ) سعر الفائدة الاسمي:</strong></p>
+                $$r = 4.13\% + 2.67\% + 2.66\% = 9.46\%$$
+                <hr>
+                <p><strong>ب) سعر السوق للسندات:</strong></p>
+                <p>المتبقي 18 سنة (36 فترة نصف سنوية). الفائدة الدورية \(9.46\% / 2 = 4.73\%\).</p>
+                <div class="math-block">
+                    $$Price = 64.25 \times \text{PVIFA}(4.73\%, 36) + 1000 \times \text{PVIF}(4.73\%, 36)$$
+                    $$Price \approx 1,100.9 + 189.5 = 1,290.4 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 6</div>
+        </div>
+    </section>
+    <section class="page-section" id="page6">
+        <div class="page-header">
+            <h2>الصفحة 6 (Page_6)</h2>
+        </div>
+        <img src="REV1-23/page_6.jpg" alt="page_6" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">6) اذكر 4 اختلافات بين السندات والأسهم العادية؟</div>
+            <div class="answer">
+                <ul>
+                    <li><strong>طبيعة الأداة:</strong> السندات دين (قرض)، الأسهم ملكية.</li>
+                    <li><strong>الأولوية:</strong> السندات لها أولوية السداد عند الإفلاس، الأسهم تأتي أخيرًا.</li>
+                    <li><strong>العائد:</strong> السندات لها فائدة ثابتة، الأسهم لها توزيعات متغيرة.</li>
+                    <li><strong>تاريخ الاستحقاق:</strong> السندات لها تاريخ محدد، الأسهم أبدية.</li>
+                </ul>
+            </div>
+            <div class="chapter">Chapter 7 & 6</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">7) اشرح مزايا وعيوب طريقة فترة الاسترداد؟</div>
+            <div class="answer">
+                <p><strong>المزايا:</strong> سهلة الحساب والفهم، تعطي مؤشرًا للسيولة، تقلل المخاطر.</p>
+                <p><strong>العيوب:</strong> تتجاهل القيمة الزمنية للنقود، تتجاهل التدفقات بعد فترة الاسترداد، تعتمد على معيار شخصي.</p>
+            </div>
+            <div class="chapter">Chapter 8</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">8) اشرح المقصود بالمخاطر الغير قابلة للتنويع؟</div>
+            <div class="answer">
+                هي المخاطر الناتجة عن عوامل السوق العامة (تضخم، حروب، كساد) وتؤثر على جميع الشركات. تسمى "المخاطر النظامية" ولا يمكن التخلص منها بالتنويع. تقاس بمعامل بيتا (\(\beta\)).
+            </div>
+            <div class="chapter">Chapter 5</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page7">
+        <div class="page-header">
+            <h2>الصفحة 7 (Page_7) - صح أم خطأ</h2>
+        </div>
+        <img src="REV1-23/page_7.jpg" alt="page_7" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">السند بخصم هو السند الذي يكون فيه معدل العائد حتى تاريخ الاستحقاق أعلى من معدل القسيمة.</div>
+            <div class="answer"><strong>( صح )</strong></div>
+            <div class="chapter">Chapter 6</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">الأسهم أقل مخاطرة من السندات.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong> - الأسهم أعلى مخاطرة.
+            </div>
+            <div class="chapter">Chapter 7</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">معدل العائد الداخلي هو معدل الخصم الذي تتساوى عنده القيمة الحالية للتدفقات مع التكلفة المبدئية.</div>
+            <div class="answer"><strong>( صح )</strong></div>
+            <div class="chapter">Chapter 8</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">يستخدم الانحراف المعياري لقياس العائد المتوقع بينما يستخدم معامل بيتا لقياس المخاطر الكلية.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong> - الانحراف المعياري للمخاطر الكلية، وبيتا للمخاطر النظامية.
+            </div>
+            <div class="chapter">Chapter 5</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">التحفظ من المخاطرة يعني طلب عائد منخفض عند زيادة المخاطر.</div>
+            <div class="answer">
+                <strong>( خطأ )</strong> - يطلبون عائدًا مرتفعًا.
+            </div>
+            <div class="chapter">Chapter 5</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page8">
+        <div class="page-header">
+            <h2>الصفحة 8 (Page_8)</h2>
+        </div>
+        <img src="REV1-23/page_8.jpg" alt="page_8" class="page-image">
+        <div class="qa-block">
+            <div class="answer">
+                <em>(محتوى هذه الصفحة تكرار لأسئلة الصفحة 6: الفروقات بين الأسهم والسندات، فترة الاسترداد، والمخاطر غير القابلة للتنويع).</em>
+            </div>
+            <div class="chapter">Chapters 5, 6, 7, 8</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page9">
+        <div class="page-header">
+            <h2>الصفحة 9 (Page_9)</h2>
+        </div>
+        <img src="REV1-23/page_9.jpg" alt="page_9" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">1- حساب السعر الحالي للسهم (نموذج جوردون)</div>
+            <div class="answer">
+                <p>المعطيات: \(D_0 = 15\)، \(g = 8\%\)، \(r = 10\%\)</p>
+                <div class="math-block">
+                    $$D_1 = 15 \times 1.08 = 16.2$$
+                    $$P_0 = \frac{16.2}{0.10 - 0.08} = \frac{16.2}{0.02} = 810 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 7</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">2- حساب سعر السهم بعد 5 سنوات</div>
+            <div class="answer">
+                <p>المعطيات: \(D_0 = 20\)، \(g = 5\%\)، \(r = 7\%\)</p>
+                <div class="math-block">
+                    $$P_0 = \frac{20 \times 1.05}{0.02} = 1,050$$
+                    $$P_5 = 1,050 \times (1.05)^5 \approx 1,340.1 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 7</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page10">
+        <div class="page-header">
+            <h2>الصفحة 10 (Page_10)</h2>
+        </div>
+        <img src="REV1-23/page_10.jpg" alt="page_10" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">3- ما هي القيمة الحالية للتدفقات النقدية التالية (معدل الخصم 6%)</div>
+            <div class="answer">
+                <p>سنوات 1-4 (10,000)، سنة 5 (-6,000)، سنوات 6-10 (8,000).</p>
+                <div class="math-block">
+                    $$PV_{Total} = 34,651 + (-4,483.6) + 25,182.5 \approx 55,350 \$$$
+                </div>
+                <p><em>(تم تفصيل الخطوات في حل الصفحة 3 المطابق لهذا السؤال).</em></p>
+            </div>
+            <div class="chapter">Chapter 4 - Part 2</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page11">
+        <div class="page-header">
+            <h2>الصفحة 11 (Page_11)</h2>
+        </div>
+        <img src="REV1-23/page_11.jpg" alt="page_11" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">4) حساب العائد المتوقع على المحفظة المالية</div>
+            <div class="answer">
+                <p>الأوزان: س (0.50)، ع (0.25). الوزن المتبقي لـ ص = \(1 - 0.75 = 0.25\).</p>
+                <div class="math-block">
+                    $$E(r_p) = (10\% \times 0.50) + (8\% \times 0.25) + (16\% \times 0.25)$$
+                    $$= 5\% + 2\% + 4\% = 11\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 5</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">5) حساب سعر السند (ص) - نصف سنوي</div>
+            <div class="answer">
+                <p>القيمة الاسمية 1000، 5 سنوات، YTM 12%، كوبون 10% (نصف سنوي).</p>
+                <p>تعديل: \(n = 10\) فترات، \(r = 6\%\)، \(PMT = 50\).</p>
+                <div class="math-block">
+                    $$Price = 50 \times \text{PVIFA}(6\%, 10) + 1000 \times \text{PVIF}(6\%, 10)$$
+                    $$Price = 368 + 558.4 = 926.4 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 6</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page12">
+        <div class="page-header">
+            <h2>الصفحة 12 (Page_12)</h2>
+        </div>
+        <img src="REV1-23/page_12.jpg" alt="page_12" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">7) حساب معدل العائد الخالي من المخاطر</div>
+            <div class="answer">
+                <p>الاسمي = 14.2%، علاوة المخاطرة = 4.1%</p>
+                <div class="math-block">
+                    $$R_F = 14.2\% - 4.1\% = 10.1\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 6</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">8) حساب العائد على الأصل (ع) باستخدام CAPM</div>
+            <div class="answer">
+                <p>\(\beta = 0.5\)، \(R_F = 6\%\)، \(R_m = 21\%\)</p>
+                <div class="math-block">
+                    $$r = 6\% + 0.5 \times (21\% - 6\%) = 13.5\%$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 5</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page13">
+        <div class="page-header">
+            <h2>الصفحة 13 (Page_13)</h2>
+        </div>
+        <img src="REV1-23/page_13.jpg" alt="page_13" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">9) اختيار المشروع باستخدام طريقة فترة الاسترداد</div>
+            <div class="answer">
+                <p>التكلفة 6,500$. الحد الأقصى 4 سنوات.</p>
+                <ul>
+                    <li>المشروع (س): يسترد في 2.41 سنة.</li>
+                    <li>المشروع (ص): يسترد في 3.07 سنة.</li>
+                </ul>
+                <p><strong>القرار:</strong> اختيار المشروع (س) لأنه الأسرع.</p>
+            </div>
+            <div class="chapter">Chapter 8</div>
+        </div>
+    </section>
+
+    <section class="page-section" id="page14">
+        <div class="page-header">
+            <h2>الصفحة 14 (Page_14)</h2>
+        </div>
+        <img src="REV1-23/page_14.jpg" alt="page_14" class="page-image">
+
+        <div class="qa-block">
+            <div class="question">1- حساب القيمة الحالية للتدفقات النقدية المختلطة</div>
+            <div class="answer">
+                <p>600 (س1-4)، -500 (س5)، 900 (س6-10). معدل الخصم 10%.</p>
+                <div class="math-block">
+                    $$PV_1 = 1,901.9$$
+                    $$PV_2 = -310.5$$
+                    $$PV_3 = 2,118.3$$
+                    $$Total = 3,709.7 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 4</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">2- تقييم السندات (الفائدة الاسمية وسعر السوق)</div>
+            <div class="answer">
+                <p><strong>أ) سعر الفائدة الاسمي:</strong></p>
+                $$r = 4.13\% + 2.67\% + 2.66\% = 9.46\%$$
+                <hr>
+                <p><strong>ب) سعر السوق للسندات:</strong></p>
+                <p>المتبقي 18 سنة (36 فترة نصف سنوية). الفائدة الدورية \(9.46\% / 2 = 4.73\%\).</p>
+                <div class="math-block">
+                    $$Price = 64.25 \times \text{PVIFA}(4.73\%, 36) + 1000 \times \text{PVIF}(4.73\%, 36)$$
+                    $$Price \approx 1,100.9 + 189.5 = 1,290.4 \$$$
+                </div>
+            </div>
+            <div class="chapter">Chapter 6</div>
+        </div>
+    </section>
